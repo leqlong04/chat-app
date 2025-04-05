@@ -12,6 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "daisyui": "^4.12.23"
+  },
+  "dependencies": {
+    "peerjs": "^1.5.4",
+    "react-icons": "^5.5.0",
+    "react-loading-skeleton": "^3.5.0"
   }
 }
-

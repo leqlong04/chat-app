@@ -1,8 +1,9 @@
 import { X } from "lucide-react";
+import { FaVideo } from "react-icons/fa";
 import { useAuthStore } from "../store/useAuthStore";
 import { useChatStore } from "../store/useChatStore";
 
-const ChatHeader = () => {
+const ChatHeader = ({ onVideoCall }) => {
   const { selectedUser, setSelectedUser } = useChatStore();
   const { onlineUsers } = useAuthStore();
 
@@ -26,10 +27,23 @@ const ChatHeader = () => {
           </div>
         </div>
 
-        {/* Close button */}
-        <button onClick={() => setSelectedUser(null)}>
-          <X />
-        </button>
+        {/* Action buttons */}
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={onVideoCall}
+            className="btn btn-ghost btn-sm"
+            title="Start video call"
+          >
+            <FaVideo className="text-xl" />
+          </button>
+          <button 
+            onClick={() => setSelectedUser(null)}
+            className="btn btn-ghost btn-sm"
+            title="Close chat"
+          >
+            <X />
+          </button>
+        </div>
       </div>
     </div>
   );

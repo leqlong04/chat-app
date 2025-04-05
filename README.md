@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# ✨ Full Stack Realtime Chat App ✨
+=======
+>>>>>>> 05daddb (Update)
+>>>>>>> e3b4818 (Update)
 
 Highlights:
 

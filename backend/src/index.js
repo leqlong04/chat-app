@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { PeerServer } from 'peer';
 
 import path from "path";
 
@@ -15,6 +16,20 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
+
+// Initialize PeerJS server
+const peerServer = PeerServer({
+  port: 3001,
+  path: '/'
+});
+
+peerServer.on('connection', (client) => {
+  console.log('Client connected:', client.getId());
+});
+
+peerServer.on('disconnect', (client) => {
+  console.log('Client disconnected:', client.getId());
+});
 
 app.use(express.json());
 app.use(cookieParser());
